@@ -146,7 +146,10 @@ const { tableData, pageable, searchParam, searchInitParam, getTableList, search,
 const clearSelection = () => tableRef.value!.clearSelection();
 
 // 初始化请求
-onMounted(() => props.requestAuto && getTableList());
+onMounted(() => {
+  props.requestAuto && getTableList();
+  console.log(props.columns);
+});
 
 // 监听页面 initParam 改化，重新获取表格数据
 watch(() => props.initParam, getTableList, { deep: true });
