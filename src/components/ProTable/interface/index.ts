@@ -3,6 +3,7 @@ import { BreakPoint, Responsive } from "@/components/Grid/interface";
 import { TableColumnCtx } from "element-plus/es/components/table/src/table-column/defaults";
 import { ProTableProps } from "@/components/ProTable/index.vue";
 import ProTable from "@/components/ProTable/index.vue";
+import HeaderCellRenderer from "element-plus/es/components/table-v2/src/renderers/header-cell";
 
 export interface EnumProps {
   label?: string; // 选项框显示的文字
@@ -79,3 +80,7 @@ export interface ColumnProps<T = any> extends Partial<Omit<TableColumnCtx<T>, "c
 }
 
 export type ProTableInstance = Omit<InstanceType<typeof ProTable>, keyof ComponentPublicInstance | keyof ProTableProps>;
+
+export type i<T> = HeaderRenderScope<T> & {
+  $index: number;
+};

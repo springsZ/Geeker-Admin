@@ -15,6 +15,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
+import { storeToRefs } from "pinia";
 import { useUserStore } from "@/stores/modules/user";
 import AssemblySize from "./components/AssemblySize.vue";
 import Language from "./components/Language.vue";
@@ -26,6 +27,16 @@ import Avatar from "./components/Avatar.vue";
 
 const userStore = useUserStore();
 const username = computed(() => userStore.userInfo.name);
+const { userInfo } = userStore;
+console.log(userInfo);
+
+const { token } = storeToRefs(userStore);
+console.log(token);
+// const changeToken = () => {
+//   userStore.setToken("123" + Math.random());
+//   console.log("失去响应的", token);
+//   console.log("userStore.token", userStore.token);
+// };
 </script>
 
 <style scoped lang="scss">

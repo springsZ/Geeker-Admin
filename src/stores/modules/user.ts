@@ -8,7 +8,11 @@ export const useUserStore = defineStore({
     token: "",
     userInfo: { name: "Geeker" }
   }),
-  getters: {},
+  getters: {
+    getUserInfo(state) {
+      return state.userInfo;
+    }
+  },
   actions: {
     // Set Token
     setToken(token: string) {
@@ -17,6 +21,9 @@ export const useUserStore = defineStore({
     // Set setUserInfo
     setUserInfo(userInfo: UserState["userInfo"]) {
       this.userInfo = userInfo;
+    },
+    setName(name: string) {
+      this.userInfo.name = name;
     }
   },
   persist: piniaPersistConfig("geeker-user")
