@@ -129,24 +129,9 @@
             "isAffix": false,
             "isKeepAlive": true
           }
-        },
-        {
-          "path": "/dashboard/embedded",
-          "name": "embedded",
-          "component": "/dashboard/embedded/index",
-          "meta": {
-            "icon": "Menu",
-            "title": "内嵌页面",
-            "isLink": "",
-            "isHide": false,
-            "isFull": false,
-            "isAffix": false,
-            "isKeepAlive": true
-          }
         }
       ]
     },
-
     {
       "path": "/system",
       "name": "system",
@@ -261,7 +246,6 @@
         }
       ]
     },
-
     {
       "path": "/about/index",
       "name": "about",
